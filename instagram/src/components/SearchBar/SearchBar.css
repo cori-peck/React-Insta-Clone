@@ -1,0 +1,43 @@
+.sbContainer {
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.sbLT {
+}
+
+.instaIcon {
+    width: 27px;
+    height: 27px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+
+.logo {
+    width: 125px;
+    margin-left: -5px;
+}
+
+.sbSearch {
+    font-size: .9rem;
+    width: 210px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.sbRT {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navIcons {
+    padding: 0px 15px;
+    color: gray;
+}
