@@ -2,25 +2,29 @@ import React from 'react';
 import * as Icon from 'react-feather';
 import PropTypes from 'prop-types';
 
+import './PostContainer.css';
+
 import CommentSection from '../CommentSection/CommentSection';
 
 const PostContainer = props => {
     return (
         <>
-            <div>
-                <img src={props.post.thumbnailUrl} alt="" />
-                <p>{props.post.username}</p>
-            </div>
-            <div>
+            <div className="postContainer">
+                <div className="postHead">
+                    <img className="profileImg" src={props.post.thumbnailUrl} alt="" />
+                    <p className="username">{props.post.username}</p>
+                </div>
+            <div className="postPic">
                 <img src={props.post.imageUrl} alt="" />
             </div>
-            <div>
-                <Icon.Heart />
-                <Icon.MessageCircle />
-                <p>{props.post.likes} likes</p>
+            <div className="postFooter">
+                <Icon.Heart className="commentIcons"/>
+                <Icon.MessageCircle className="commentIcons"/>
+                <p className="boldLikes">{props.post.likes} likes</p>
             </div>
             <div>
                 <CommentSection comments={props.post.comments} />
+            </div>
             </div>
         </>
 
