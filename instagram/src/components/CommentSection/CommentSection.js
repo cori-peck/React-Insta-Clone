@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CommentSection = props => {
     return (
         <>
             {props.comments.map(comment => {
                 return(
-                    <div>
+                    <div key={comment.text}>
                         <p>{comment.username}</p>
                         <p>{comment.text}</p>
                     </div>
@@ -17,5 +18,9 @@ const CommentSection = props => {
         </>
     )
 }
+
+CommentSection.propTypes = {
+    comments: PropTypes.array.isRequired,
+    }
 
 export default CommentSection
