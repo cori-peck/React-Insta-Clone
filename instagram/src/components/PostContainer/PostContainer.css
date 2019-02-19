@@ -1,13 +1,21 @@
+.mainContainer {
+    margin-top: 5.5%;
+    background-color: #fafafa;
+}
+
 .postContainer {
     border: 1px solid #e1e1e1;
+    background-color: #fafafa;
     width: 47.4%;
     margin-left: 12%;
-    margin-top: 4%;
+    margin-top: 7%;
+    margin-bottom: -25px;
 }
 
 .postHead {
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 
 .profileImg {
@@ -25,6 +33,10 @@
     width: 100%;
 }
 
+.postFooter {
+    background-color: white;
+}
+
 .commentIcons {
     margin: 8px 0px 8px 12px;
 }
@@ -32,5 +44,6 @@
 .boldLikes {
     font-size: 1.0rem;
     font-weight: 600;
-    margin: -10px 10px 18px 10px;
+    margin: -10px 10px 0px 10px;
+    padding-bottom: 15px;
 }

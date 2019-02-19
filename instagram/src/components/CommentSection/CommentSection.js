@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'moment';
 
 import './CommentSection.css';
 
 const CommentSection = props => {
+    const timeStamp = Moment().startOf('hour').fromNow();
     return (
-        <>
+        <div>
             {props.comments.map(comment => {
                 return(
                     <div className="comContainer" key={comment.text}>
@@ -14,10 +16,11 @@ const CommentSection = props => {
                     </div>
                 )
             })}
+            <p className="time">{timeStamp}</p>
             <form>
                 <input type="text" placeholder="Add a comment..." />
             </form>
-        </>
+        </div>
     )
 }
 

@@ -8,7 +8,7 @@ import CommentSection from '../CommentSection/CommentSection';
 
 const PostContainer = props => {
     return (
-        <>
+        <div className="mainContainer">
             <div className="postContainer">
                 <div className="postHead">
                     <img className="profileImg" src={props.post.thumbnailUrl} alt="" />
@@ -26,7 +26,7 @@ const PostContainer = props => {
                 <CommentSection comments={props.post.comments} />
             </div>
             </div>
-        </>
+        </div>
 
     )
 }

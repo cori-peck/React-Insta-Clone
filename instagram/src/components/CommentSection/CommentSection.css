@@ -1,8 +1,13 @@
+form {
+    background-color: white;
+}
+
 .comContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    background-color: white;
 }
 
 .comUsername {
@@ -14,4 +19,11 @@
 .comText {
     font-size: 0.9rem;
     margin-top: -15px;
+}
+
+.time {
+    font-size: 0.7rem;
+    color: gray;
+    background-color: white;
+    margin: 0 auto;
 }

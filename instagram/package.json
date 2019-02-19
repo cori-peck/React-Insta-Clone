@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "feather-icons": "^4.17.0",
+    "moment": "^2.24.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-feather": "^1.1.6",
