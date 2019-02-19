@@ -1,6 +1,13 @@
+body {
+  background-color: #fafafa;
+}
+
 .App {
   margin: auto;
   box-sizing: border-box;
-  background-color: #fafafa;
+}
+
+.mainContainer {
+  margin-top: 8%;
 }
 

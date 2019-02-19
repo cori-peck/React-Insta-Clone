@@ -22,9 +22,11 @@ class App extends Component {
       <div className="App">
 
             <SearchBar />
+            <div className="mainContainer">
             {this.state.posts.map((post) => (
             <PostContainer key={post.timestamp} post={post}/>
-        ))}
+            ))}
+          </div>
       </div>
     );
   }

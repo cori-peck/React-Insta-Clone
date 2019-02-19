@@ -1,14 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import * as Icon from 'react-feather';
 
 import './CommentSection.css';
+import dummyData from '../../dummy-data';
 
-const CommentSection = props => {
-    const timeStamp = Moment().startOf('hour').fromNow();
-    return (
+class CommentSection extends React.Component {
+    state= {
+        comments: [],
+        newComment: ''
+    }
+
+    componentDidMount() {
+        this.setState({ comments: dummyData })
+    }
+
+    
+    render() {
+        const timeStamp = Moment().startOf('hour').fromNow();
+     return (
         <div>
-            {props.comments.map(comment => {
+            {this.state.comments.map(comment => {
                 return(
                     <div className="comContainer" key={comment.text}>
                         <p className="comUsername">{comment.username}</p>
@@ -18,10 +31,13 @@ const CommentSection = props => {
             })}
             <p className="time">{timeStamp}</p>
             <form>
-                <input type="text" placeholder="Add a comment..." />
+                <input type="text" value={this.state.newComment} 
+                    onSubmit={this.handleChange} placeholder="Add a comment..." />
             </form>
+            <Icon.MoreHorizontal />
         </div>
-    )
+        )
+    }
 }
 
 CommentSection.propTypes = {
