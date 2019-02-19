@@ -3,8 +3,14 @@ import React from 'react';
 const CommentSection = props => {
     return (
         <>
-            <p>{props.comments.username}</p>
-            <p>{props.comments.text}</p>
+            {props.comments.map(comment => {
+                return(
+                    <div>
+                        <p>{comment.username}</p>
+                        <p>{comment.text}</p>
+                    </div>
+                )
+            })}
             <form>
                 <input type="text" placeholder="Add a comment..." />
             </form>
