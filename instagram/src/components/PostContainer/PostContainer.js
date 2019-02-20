@@ -22,7 +22,7 @@ const PostContainer = props => {
                 <p className="boldLikes">{props.post.likes} likes</p>
             </div>
             <div>
-                <CommentSection />
+                <CommentSection comments={props.post.comments} />
             </div>
             </div>
 
