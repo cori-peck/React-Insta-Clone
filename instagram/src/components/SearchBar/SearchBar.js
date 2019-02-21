@@ -2,7 +2,7 @@ import React from 'react';
 import * as Icon from 'react-feather';
 import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar(props) {
     return (
         <div className="sbContainer">
             <div className="sbLT">
@@ -10,8 +10,9 @@ function SearchBar() {
                 <img className="logo" src="https://fontmeme.com/images/instagram-new-logo.png" alt="Instagram Cursive Logo" />
             </div>
             <div>
-                <form>
-                    <input className="sbSearch" type="text" placeholder="🔍 Search" />
+                <form onSubmit={props.searchPost}>
+                    <input className="sbSearch" type="text" value={props.searchInput}
+                        onChange={props.searchInputHandler} placeholder="🔍 Search" />
                 </form>
             </div>
             <div className="sbRT">

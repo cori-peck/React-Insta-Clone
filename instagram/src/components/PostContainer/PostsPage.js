@@ -10,18 +10,35 @@ class PostsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: dummyData,
+            posts: props.posts,
+            post: [],
+            filteredPost: []
         }
     }
+
+    handleSearch = e => {
+        const post = this.state.post.filter(filtered => {
+            if (filtered.username.includes(e.target.value)) {
+                console.log('Searching....')
+            return filtered;
+            }
+        })
+        this.setState({ filteredPost: post })
+    }
+
+    componentDidMount() {
+        this.setState({dummyData: dummyData})
+      }
 
     render() {
         return (
             <>
-                <SearchBar />
+                <SearchBar searchPost={this.handleSearch} />
                 <div className="mainContainer">
-                {this.state.posts.map((post) => (
-                <PostContainer key={post.timestamp} post={post}/>
-                ))}
+                    {this.state.posts.map((posts, i) => (
+                <PostContainer key={i} post={posts} 
+                    post={this.state.filteredPost.length > 0 ? this.state.filteredPost : this.state.posts} />
+                    ))}
                 </div>
             </>
         )

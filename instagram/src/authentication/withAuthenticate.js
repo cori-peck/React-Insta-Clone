@@ -1,17 +1,17 @@
 import React from 'react';
+import LoginPage from '../components/Login/LoginPage';
 import PostsPage from '../components/PostContainer/PostsPage';
-import Login from '../components/Login/Login';
 
-const withAuthenticate = PostsPage => Login => props => {
-        if (props.loggedIn)
-        return(
+const withAuthenticate = PostsPage => LoginPage => props => {
+    if (props.loggedIn)
+        return (
             <PostsPage />
         );
         return (
-            <Login />
-        )
+            <LoginPage />
+        );
 }
      
 
 
-export default withAuthenticate(PostsPage)(Login)
+export default withAuthenticate(PostsPage)(LoginPage)
