@@ -1,14 +1,17 @@
 import React from 'react';
+import PostsPage from '../components/PostContainer/PostsPage';
+import Login from '../components/Login/Login';
 
-const withAuthenticate = App => class extends React.Component {
-    render() {
+const withAuthenticate = PostsPage => Login => props => {
+        if (props.loggedIn)
+        return(
+            <PostsPage />
+        );
         return (
-            <>
-                <App />;
-            </>
+            <Login />
         )
-    }
 }
+     
 
 
-export default withAuthenticate
+export default withAuthenticate(PostsPage)(Login)
