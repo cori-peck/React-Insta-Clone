@@ -7,7 +7,6 @@ class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
-            loggedIn: false
         }
     }
 
@@ -20,14 +19,6 @@ class LoginPage extends React.Component {
         const user = this.state.username;
         localStorage.setItem('user', user);
         window.location.reload();
-    }
-
-    componentDidMount() {
-        if (localStorage.getItem('user')) {
-            this.setState({ loggedIn: true })
-        } else {
-            this.setState({ loggedIn: false })
-        }
     }
 
     render() {

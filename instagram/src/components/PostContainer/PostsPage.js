@@ -27,7 +27,7 @@ class PostsPage extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({dummyData: dummyData})
+        this.setState({ posts: dummyData})
       }
 
     render() {
@@ -35,10 +35,10 @@ class PostsPage extends React.Component {
             <>
                 <SearchBar searchPost={this.handleSearch} />
                 <div className="mainContainer">
-                    {this.state.posts.map((posts, i) => (
-                <PostContainer key={i} post={posts} 
-                    post={this.state.filteredPost.length > 0 ? this.state.filteredPost : this.state.posts} />
-                    ))}
+                    {this.state.post.map(posts => 
+                        <PostContainer key={posts.timestamp} posts={posts} 
+                        post={this.state.filteredPost.length > 0 ? this.state.filteredPost : this.state.posts} />
+                    )}
                 </div>
             </>
         )
